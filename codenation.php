@@ -22,7 +22,7 @@ echo "<input type=text value='$contents->cifrado' style='width: 500px'>";
 echo '</label>';
 echo '<br>';
 
-for ($i = 0; $i <= strlen($contents->cifrado); $i++) {
+for ($i = 0; $i < strlen($contents->cifrado); $i++) {
     $ord = ord(substr($contents->cifrado, $i, $i + 1));
 
     if ($ord >= 97 && $ord <= 122) {
@@ -33,9 +33,7 @@ for ($i = 0; $i <= strlen($contents->cifrado); $i++) {
             $decode .= chr($ord + $aux);
         }
     } else {
-        if ($ord != 0) {
-            $decode .= chr($ord);
-        }
+        $decode .= chr($ord);
     }
 }
 
